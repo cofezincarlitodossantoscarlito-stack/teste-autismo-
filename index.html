@@ -1,97 +1,212 @@
   
-  </p>  
-</section>  <footer> <hr>
+  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Teste de Autismo – TEA</title>
 
-<h2>Escolha o nível do teste</h2>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #eef4f7;
+  margin: 0;
+  padding: 0;
+}
 
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  background: white;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-top: 30px;
+  padding: 20px;
+  border-left: 6px solid #4aa3df;
+  background: #f9fcff;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #1e6fa8;
+}
+
+.prices {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.price-box {
+  background: #e8f3fb;
+  padding: 20px;
+  width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.price-box h3 {
+  color: #1e6fa8;
+}
+
+.price-box p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button {
+  background: #1e6fa8;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #155a8a;
+}
+
+#pixBox {
+  display: none;
+  margin-top: 40px;
+  padding: 25px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#pixBox p {
+  margin: 10px 0;
+}
+
+.pix-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pix-email {
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Teste de Autismo (TEA)</h1>
+<h2>Avaliação Informativa por Níveis</h2>
+
+<div class="section">
 <p>
-O acesso ao conteúdo será liberado somente após a confirmação
-do pagamento via PIX.
+O <span class="highlight">Transtorno do Espectro Autista (TEA)</span> é caracterizado por diferenças no
+desenvolvimento neurológico, podendo afetar a <span class="highlight">comunicação</span>,
+<span class="highlight">interação social</span> e o <span class="highlight">comportamento</span>.
 </p>
 
-<button onclick="mostrarPix('Nível 1 – TEA Leve', 'R$10')">
-Nível 1 – R$10
-</button>
-
-<button onclick="mostrarPix('Nível 2 – TEA Moderado', 'R$15')">
-Nível 2 – R$15
-</button>
-
-<button onclick="mostrarPix('Nível 3 – TEA Severo', 'R$20')">
-Nível 3 – R$20
-</button>
-
-<div id="pixModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7);">
-
-  <div style="background:#fff; padding:20px; margin:50px auto; max-width:400px; text-align:center;">
-
-    <h3 id="nivelEscolhido"></h3>
-
-    <p><strong>Valor:</strong> <span id="valorPix"></span></p>
-
-    <p><strong>PIX (email):</strong></p>
-    <p style="color:green; font-weight:bold;">
-      tellesjuan260@gmail.com
-    </p>
-
-    <p>
-      Após realizar o pagamento, envie o comprovante
-      pelo Instagram:
-    </p>
-
-    <p style="font-weight:bold;">
-      @_.juanzz009
-    </p>
-
-    <p>
-      O link de acesso será enviado após a confirmação.
-    </p>
-
-    <button onclick="fecharPix()">Fechar</button>
-
-  </div>
+<p>
+Este site tem como objetivo oferecer uma <span class="highlight">avaliação informativa</span>,
+organizada por <span class="highlight">níveis de suporte</span>, de forma clara,
+respeitosa e acessível.
+</p>
 </div>
 
-<script>
-function mostrarPix(nivel, valor) {
-  document.getElementById("nivelEscolhido").innerText = nivel;
-  document.getElementById("valorPix").innerText = valor;
-  document.getElementById("pixModal").style.display = "block";
-}
+<div class="section">
+<h2>Níveis do TEA</h2>
 
-function fecharPix() {
-  document.getElementById("pixModal").style.display = "none";
-}
-</script>
-<hr>
+<p>
+Os níveis são definidos conforme a necessidade de suporte:
+</p>
 
+<p>
+<span class="highlight">Nível 1:</span> Necessita de pouco suporte.<br>
+<span class="highlight">Nível 2:</span> Necessita de suporte moderado.<br>
+<span class="highlight">Nível 3:</span> Necessita de suporte intensivo.
+</p>
+</div>
+
+<div class="section">
 <h2>Escolha o nível do teste</h2>
 
-<button onclick="abrirPix('Nível 1', 'R$10')">Nível 1 – R$10</button>
-<button onclick="abrirPix('Nível 2', 'R$15')">Nível 2 – R$15</button>
-<button onclick="abrirPix('Nível 3', 'R$20')">Nível 3 – R$20</button>
+<div class="prices">
 
-<div id="pixBox" style="display:none; background:#f2f2f2; padding:20px; margin-top:20px;">
+<div class="price-box">
+<h3>Nível 1</h3>
+<p>R$10</p>
+<button onclick="abrirPix('Nível 1', 'R$10')">Selecionar</button>
+</div>
 
-  <p style="font-weight:bold; font-size:18px;">
-    Chave PIX – <span id="pixNivel"></span>
-  </p>
+<div class="price-box">
+<h3>Nível 2</h3>
+<p>R$15</p>
+<button onclick="abrirPix('Nível 2', 'R$15')">Selecionar</button>
+</div>
 
-  <p style="color:green; font-weight:bold; font-size:20px;">
-    tellesjuan260@gmail.com
-  </p>
+<div class="price-box">
+<h3>Nível 3</h3>
+<p>R$20</p>
+<button onclick="abrirPix('Nível 3', 'R$20')">Selecionar</button>
+</div>
 
-  <p>
-    Após o pagamento, envie o comprovante pelo Instagram:
-  </p>
+</div>
+</div>
 
-  <p style="font-weight:bold;">
-    @_.juanzz009
-  </p>
+<div id="pixBox">
+<p class="pix-title">
+Chave PIX – <span id="pixNivel"></span>
+</p>
 
-  <p>
-    O acesso será liberado após a confirmação.
-  </p>
+<p class="pix-email">
+tellesjuan260@gmail.com
+</p>
+
+<p>
+Após realizar o pagamento, envie o comprovante pelo Instagram:
+</p>
+
+<p class="highlight">
+@_.juanzz009
+</p>
+
+<p>
+O acesso ao conteúdo será liberado após a confirmação.
+</p>
+</div>
+
+<div class="footer">
+<p>Este site possui caráter informativo e não substitui avaliação profissional.</p>
+</div>
 
 </div>
 
@@ -99,6 +214,7 @@ function fecharPix() {
 function abrirPix(nivel, valor) {
   document.getElementById("pixNivel").innerText = nivel + " (" + valor + ")";
   document.getElementById("pixBox").style.display = "block";
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 </script>
 
