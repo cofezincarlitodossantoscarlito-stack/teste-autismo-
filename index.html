@@ -1,204 +1,162 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Teste de Autismo – TEA</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<title>Avaliação TEA – Níveis</title>
 
 <style>
 body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(120deg, #fff8e1, #e1f5fe);
-  margin: 0;
-  padding: 0;
-  color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: #ffffff;
 }
 
 .container {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 50px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 35px rgba(0,0,0,0.12);
-  text-align: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+}
+
+.card {
+    background: rgba(0,0,0,0.45);
+    border-radius: 28px;
+    padding: 40px;
+    margin-bottom: 40px;
 }
 
 h1 {
-  font-size: 62px;
-  background: linear-gradient(90deg, #ff6d00, #ffca28);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
+    text-align: center;
+    font-size: 46px;
+    color: #ffeb3b;
 }
 
 h2 {
-  font-size: 44px;
-  background: linear-gradient(90deg, #1e88e5, #42a5f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 30px;
-  animation: fadeInText 1.2s ease forwards;
-  opacity: 0;
+    font-size: 34px;
+    color: #80deea;
+    text-align: center;
 }
 
-@keyframes fadeInText {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
-}
-
-.section {
-  margin-top: 40px;
-  padding: 35px;
-  background: #f0f9ff;
-  border-left: 12px solid #ff6d00;
-  border-radius: 15px;
-  text-align: justify;
-  animation: fadeInSection 1.2s ease forwards;
-  opacity: 0;
-}
-
-.section p {
-  font-size: 25px;
-  line-height: 2;
-  margin-bottom: 15px;
+p {
+    font-size: 24px;
+    line-height: 1.8;
 }
 
 .highlight {
-  font-weight: bold;
-  font-style: italic;
-  color: #e65100;
+    color: #ffeb3b;
+    font-weight: bold;
 }
 
-@keyframes fadeInSection {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
+/* ===== BOTÕES ANIMADOS ===== */
+.buttons {
+    text-align: center;
+    margin-top: 40px;
 }
 
-.prices {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 45px;
-  flex-wrap: wrap;
+.magic-btn {
+    position: relative;
+    padding: 20px 38px;
+    font-size: 26px;
+    border: none;
+    border-radius: 22px;
+    margin: 18px;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: bold;
 }
 
-.price-box {
-  padding: 35px;
-  width: 320px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+.magic-btn span {
+    position: relative;
+    z-index: 2;
 }
 
-.price-box:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+/* brilho passando */
+.magic-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    animation: shine 3s infinite;
 }
 
-.price-box i {
-  font-size: 50px;
-  margin-bottom: 15px;
-  transition: transform 0.5s;
+@keyframes shine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
 }
 
-.price-box:hover i {
-  transform: rotate(20deg) scale(1.2);
+/* estrelinhas */
+.magic-btn::after {
+    content: "✨ ✨ ✨";
+    position: absolute;
+    font-size: 18px;
+    opacity: 0.8;
+    animation: stars 2.5s infinite ease-in-out;
 }
 
-#nivel1 {
-  background: linear-gradient(135deg, #ff8a80, #ff5252);
+@keyframes stars {
+    0% {
+        top: 70%;
+        left: 10%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: -10%;
+        left: 80%;
+        opacity: 0;
+    }
 }
 
-#nivel2 {
-  background: linear-gradient(135deg, #82b1ff, #448aff);
+/* cores dos níveis */
+.n1 { background: #00e676; color: #000; }
+.n2 { background: #ff9100; color: #000; }
+.n3 { background: #ff5252; color: #fff; }
+
+/* ===== PIX ===== */
+.pixBox {
+    display: none;
+    background: rgba(0,0,0,0.6);
+    padding: 35px;
+    border-radius: 22px;
+    margin-top: 40px;
+    text-align: center;
 }
 
-#nivel3 {
-  background: linear-gradient(135deg, #b9f6ca, #00e676);
+.pixTitle {
+    font-size: 32px;
+    color: #ffeb3b;
 }
 
-.price-box h3 {
-  font-size: 36px;
-  margin-bottom: 15px;
+.pixValue {
+    font-size: 28px;
+    margin-top: 15px;
 }
 
-.price-box p {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 10px 0 20px 0;
+.pixKey {
+    font-size: 26px;
+    margin-top: 25px;
+    background: rgba(255,255,255,0.15);
+    padding: 15px;
+    border-radius: 12px;
 }
 
-button {
-  background: rgba(255,255,255,0.9);
-  color: #333;
-  border: none;
-  padding: 22px 38px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  animation: pulseButton 2s infinite;
-}
-
-@keyframes pulseButton {
-  0%, 100% {transform: scale(1);}
-  50% {transform: scale(1.05);}
-}
-
-button:hover {
-  background: #fff;
-  color: #000;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
-
-#pixBox {
-  display: none;
-  margin-top: 50px;
-  padding: 50px;
-  background: #fff8e1;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.25);
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
-}
-
-#pixBox p {
-  margin: 18px 0;
-  font-size: 26px;
-}
-
-.pix-title {
-  font-size: 34px;
-  font-weight: bold;
-  font-style: italic;
-  color: #ff6d00;
-}
-
-.pix-email {
-  font-size: 34px;
-  font-weight: bold;
-  color: #00bfa5;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 70px;
-  color: #555;
-  font-size: 22px;
+.instagram {
+    margin-top: 25px;
+    font-size: 20px;
+    color: #80deea;
 }
 </style>
 </head>
@@ -207,99 +165,64 @@ button:hover {
 
 <div class="container">
 
-<h1>Teste de Autismo (TEA)</h1>
-<h2>Avaliação Informativa por Níveis</h2>
+<div class="card">
+<h1>🧩 Avaliação do Transtorno do Espectro Autista (TEA)</h1>
 
-<div class="section">
 <p>
-O <span class="highlight">Transtorno do Espectro Autista (TEA)</span> é caracterizado por diferenças no
-desenvolvimento neurológico, podendo afetar a <span class="highlight">comunicação</span>,
-<span class="highlight">interação social</span> e o <span class="highlight">comportamento</span>.
+Escolha abaixo o <span class="highlight">nível de avaliação</span>.
+Cada nível possui conteúdo explicativo e questionário próprio.
 </p>
 
 <p>
-Este site oferece uma <span class="highlight">avaliação informativa</span>,
-organizada por <span class="highlight">níveis de suporte</span>, de forma clara,
-respeitosa e acessível.
+⚠️ Esta avaliação é <span class="highlight">informativa</span> e não substitui diagnóstico médico.
 </p>
 </div>
 
-<div class="section">
-<h2>Níveis do TEA</h2>
+<div class="card">
+<h2>Escolha o nível</h2>
 
-<p>
-Os níveis são definidos conforme a necessidade de suporte:
-</p>
+<div class="buttons">
+<button class="magic-btn n1" onclick="showPix('Nível 1', 'R$ 5,00')">
+<span>✨ Nível 1 – R$ 5 ✨</span>
+</button>
 
-<p>
-<span class="highlight">Nível 1:</span> Necessita de <span class="highlight">pouco suporte</span>.<br>
-<span class="highlight">Nível 2:</span> Necessita de <span class="highlight">suporte moderado</span>.<br>
-<span class="highlight">Nível 3:</span> Necessita de <span class="highlight">suporte intensivo</span>.
-</p>
+<button class="magic-btn n2" onclick="showPix('Nível 2', 'R$ 7,00')">
+<span>✨ Nível 2 – R$ 7 ✨</span>
+</button>
+
+<button class="magic-btn n3" onclick="showPix('Nível 3', 'R$ 10,00')">
+<span>✨ Nível 3 – R$ 10 ✨</span>
+</button>
 </div>
 
-<div class="section">
-<h2>Escolha o nível do teste</h2>
+<div class="pixBox" id="pixBox">
+<div class="pixTitle" id="pixTitle"></div>
 
-<div class="prices">
-
-<div class="price-box" id="nivel1">
-<i class="fas fa-star"></i>
-<h3>Nível 1</h3>
-<p>R$5</p>
-<button onclick="abrirPix('Nível 1', 'R$5')">Selecionar</button>
+<div class="pixValue">
+💰 Valor: <span class="highlight" id="pixValue"></span>
 </div>
 
-<div class="price-box" id="nivel2">
-<i class="fas fa-star-half-alt"></i>
-<h3>Nível 2</h3>
-<p>R$10</p>
-<button onclick="abrirPix('Nível 2', 'R$10')">Selecionar</button>
-</div>
-
-<div class="price-box" id="nivel3">
-<i class="fas fa-star-of-life"></i>
-<h3>Nível 3</h3>
-<p>R$15</p>
-<button onclick="abrirPix('Nível 3', 'R$15')">Selecionar</button>
-</div>
-
-</div>
-</div>
-
-<div id="pixBox">
-<p class="pix-title">
-Chave PIX – <span id="pixNivel"></span>
-</p>
-
-<p class="pix-email">
+<div class="pixKey">
+<strong>🔑 CHAVE PIX PARA PAGAMENTO</strong><br><br>
 tellesjuan260@gmail.com
-</p>
-
-<p>
-Após realizar o pagamento, envie o comprovante pelo Instagram:
-</p>
-
-<p class="highlight">
-@_.juanzz009
-</p>
-
-<p>
-O acesso ao conteúdo será liberado após a confirmação.
-</p>
 </div>
 
-<div class="footer">
-<p>Este site possui caráter informativo e não substitui avaliação profissional.</p>
+<div class="instagram">
+📸 Envie o comprovante para:<br>
+<strong>@_.juanzz009</strong><br><br>
+Após confirmação, você receberá o link de acesso.
+</div>
+</div>
+
 </div>
 
 </div>
 
 <script>
-function abrirPix(nivel, valor) {
-  document.getElementById("pixNivel").innerText = nivel + " (" + valor + ")";
-  document.getElementById("pixBox").style.display = "block";
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+function showPix(level, price) {
+    document.getElementById("pixTitle").innerHTML = "Pagamento – " + level;
+    document.getElementById("pixValue").innerHTML = price;
+    document.getElementById("pixBox").style.display = "block";
 }
 </script>
 
