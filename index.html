@@ -11,7 +11,7 @@
 <style>
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(120deg, #f9fbe7, #e3f2fd);
+  background: linear-gradient(120deg, #fff8e1, #e1f5fe);
   margin: 0;
   padding: 0;
   color: #333;
@@ -23,12 +23,12 @@ body {
   padding: 50px;
   background: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 35px rgba(0,0,0,0.12);
   text-align: center;
 }
 
 h1 {
-  font-size: 60px; /* Aumentado */
+  font-size: 62px;
   background: linear-gradient(90deg, #ff6d00, #ffca28);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,24 +36,33 @@ h1 {
 }
 
 h2 {
-  font-size: 42px; /* Aumentado */
+  font-size: 44px;
   background: linear-gradient(90deg, #1e88e5, #42a5f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 30px;
+  animation: fadeInText 1.2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInText {
+  0% {opacity:0; transform: translateY(20px);}
+  100% {opacity:1; transform: translateY(0);}
 }
 
 .section {
   margin-top: 40px;
-  padding: 30px;
-  background: #f0f4c3;
+  padding: 35px;
+  background: #f0f9ff;
   border-left: 12px solid #ff6d00;
   border-radius: 15px;
   text-align: justify;
+  animation: fadeInSection 1.2s ease forwards;
+  opacity: 0;
 }
 
 .section p {
-  font-size: 24px; /* Aumentado */
+  font-size: 25px;
   line-height: 2;
   margin-bottom: 15px;
 }
@@ -64,16 +73,21 @@ h2 {
   color: #e65100;
 }
 
+@keyframes fadeInSection {
+  0% {opacity:0; transform: translateY(20px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+
 .prices {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-top: 40px;
+  gap: 30px;
+  margin-top: 45px;
   flex-wrap: wrap;
 }
 
 .price-box {
-  padding: 35px; /* um pouco maior */
+  padding: 35px;
   width: 320px;
   border-radius: 20px;
   text-align: center;
@@ -85,8 +99,18 @@ h2 {
 }
 
 .price-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transform: translateY(-12px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+}
+
+.price-box i {
+  font-size: 50px;
+  margin-bottom: 15px;
+  transition: transform 0.5s;
+}
+
+.price-box:hover i {
+  transform: rotate(20deg) scale(1.2);
 }
 
 #nivel1 {
@@ -102,64 +126,70 @@ h2 {
 }
 
 .price-box h3 {
-  font-size: 34px; /* Aumentado */
+  font-size: 36px;
   margin-bottom: 15px;
 }
 
 .price-box p {
-  font-size: 26px; /* Aumentado */
+  font-size: 28px;
   font-weight: bold;
   margin: 10px 0 20px 0;
-}
-
-.price-box i {
-  font-size: 48px; /* Aumentado */
-  margin-bottom: 15px;
 }
 
 button {
   background: rgba(255,255,255,0.9);
   color: #333;
   border: none;
-  padding: 20px 36px; /* Aumentado */
+  padding: 22px 38px;
   border-radius: 15px;
   cursor: pointer;
-  font-size: 22px; /* Aumentado */
+  font-size: 24px;
   font-weight: bold;
   transition: all 0.3s ease;
+  animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.05);}
 }
 
 button:hover {
   background: #fff;
   color: #000;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 #pixBox {
   display: none;
   margin-top: 50px;
-  padding: 45px; /* Aumentado */
-  background: #fff3e0;
+  padding: 50px;
+  background: #fff8e1;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 30px rgba(0,0,0,0.25);
   animation: fadeIn 0.6s ease-in-out;
 }
 
+@keyframes fadeIn {
+  0% {opacity:0; transform: translateY(20px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+
 #pixBox p {
-  margin: 15px 0;
-  font-size: 24px; /* Aumentado */
+  margin: 18px 0;
+  font-size: 26px;
 }
 
 .pix-title {
-  font-size: 32px; /* Aumentado */
+  font-size: 34px;
   font-weight: bold;
   font-style: italic;
   color: #ff6d00;
 }
 
 .pix-email {
-  font-size: 32px; /* Aumentado */
+  font-size: 34px;
   font-weight: bold;
   color: #00bfa5;
 }
@@ -168,12 +198,7 @@ button:hover {
   text-align: center;
   margin-top: 70px;
   color: #555;
-  font-size: 20px; /* Aumentado */
-}
-
-@keyframes fadeIn {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
+  font-size: 22px;
 }
 </style>
 </head>
