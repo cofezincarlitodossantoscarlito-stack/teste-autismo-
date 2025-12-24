@@ -5,116 +5,143 @@
 <title>Teste de Autismo – TEA</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <style>
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  background: linear-gradient(120deg, #f9fbe7, #e3f2fd);
   margin: 0;
   padding: 0;
   color: #333;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 50px auto;
-  padding: 40px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  padding: 50px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
   text-align: center;
 }
 
 h1 {
-  font-size: 46px;
-  color: #1e3d7b;
-  margin-bottom: 10px;
+  font-size: 50px;
+  background: linear-gradient(90deg, #ff6d00, #ffca28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
 }
 
 h2 {
-  font-size: 34px;
-  color: #1e3d7b;
+  font-size: 36px;
+  background: linear-gradient(90deg, #1e88e5, #42a5f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 30px;
 }
 
 .section {
   margin-top: 40px;
-  padding: 25px;
-  background: #f0f8ff;
-  border-left: 10px solid #4aa3df;
-  border-radius: 12px;
+  padding: 30px;
+  background: #f0f4c3;
+  border-left: 12px solid #ff6d00;
+  border-radius: 15px;
   text-align: justify;
 }
 
 .section p {
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: 21px;
+  line-height: 1.9;
   margin-bottom: 15px;
 }
 
 .highlight {
   font-weight: bold;
   font-style: italic;
-  color: #1e6fa8;
+  color: #e65100;
 }
 
 .prices {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-top: 35px;
+  margin-top: 40px;
   flex-wrap: wrap;
 }
 
 .price-box {
-  background: linear-gradient(135deg, #d9f0ff, #e0f7ff);
   padding: 30px;
-  width: 280px;
-  border-radius: 18px;
+  width: 300px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
   transition: transform 0.3s, box-shadow 0.3s;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .price-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+#nivel1 {
+  background: linear-gradient(135deg, #ff8a80, #ff5252);
+}
+
+#nivel2 {
+  background: linear-gradient(135deg, #82b1ff, #448aff);
+}
+
+#nivel3 {
+  background: linear-gradient(135deg, #b9f6ca, #00e676);
 }
 
 .price-box h3 {
-  color: #1e6fa8;
-  font-size: 28px;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 .price-box p {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
-  margin: 15px 0;
+  margin: 10px 0 20px 0;
+}
+
+.price-box i {
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 
 button {
-  background: linear-gradient(90deg, #1e6fa8, #155a8a);
-  color: white;
+  background: rgba(255,255,255,0.9);
+  color: #333;
   border: none;
-  padding: 16px 28px;
-  border-radius: 12px;
+  padding: 18px 32px;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 18px;
-  transition: background 0.3s;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: linear-gradient(90deg, #155a8a, #1e6fa8);
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
 #pixBox {
   display: none;
-  margin-top: 45px;
-  padding: 35px;
-  background: #f2f2f2;
-  border-radius: 15px;
+  margin-top: 50px;
+  padding: 40px;
+  background: #fff3e0;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
   animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -124,26 +151,26 @@ button:hover {
 }
 
 #pixBox p {
-  margin: 12px 0;
-  font-size: 21px;
+  margin: 15px 0;
+  font-size: 22px;
 }
 
 .pix-title {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bold;
   font-style: italic;
-  color: #1e3d7b;
+  color: #ff6d00;
 }
 
 .pix-email {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
-  color: #0f8c3f;
+  color: #00bfa5;
 }
 
 .footer {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 70px;
   color: #555;
   font-size: 18px;
 }
@@ -190,19 +217,22 @@ Os níveis são definidos conforme a necessidade de suporte:
 
 <div class="prices">
 
-<div class="price-box">
+<div class="price-box" id="nivel1">
+<i class="fas fa-star"></i>
 <h3>Nível 1</h3>
 <p>R$5</p>
 <button onclick="abrirPix('Nível 1', 'R$5')">Selecionar</button>
 </div>
 
-<div class="price-box">
+<div class="price-box" id="nivel2">
+<i class="fas fa-star-half-alt"></i>
 <h3>Nível 2</h3>
 <p>R$10</p>
 <button onclick="abrirPix('Nível 2', 'R$10')">Selecionar</button>
 </div>
 
-<div class="price-box">
+<div class="price-box" id="nivel3">
+<i class="fas fa-star-of-life"></i>
 <h3>Nível 3</h3>
 <p>R$15</p>
 <button onclick="abrirPix('Nível 3', 'R$15')">Selecionar</button>
@@ -249,4 +279,3 @@ function abrirPix(nivel, valor) {
 
 </body>
 </html>
-✅ O QUE MUDOU
