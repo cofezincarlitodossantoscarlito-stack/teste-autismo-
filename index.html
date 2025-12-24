@@ -1,162 +1,144 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Avaliação TEA – Níveis</title>
+<title>Avaliação TEA</title>
 
 <style>
-body {
-    margin: 0;
+body{
+    margin:0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1d2671, #c33764);
-    color: #ffffff;
+    background: linear-gradient(160deg,#1a237e,#880e4f);
+    color:#fff;
 }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px;
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 30px;
 }
 
-.card {
-    background: rgba(0,0,0,0.45);
-    border-radius: 28px;
-    padding: 40px;
-    margin-bottom: 40px;
+.section{
+    background:rgba(0,0,0,0.45);
+    border-radius:30px;
+    padding:50px;
+    margin-bottom:50px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 46px;
-    color: #ffeb3b;
+h1{
+    text-align:center;
+    font-size:52px;
+    color:#ffeb3b;
 }
 
-h2 {
-    font-size: 34px;
-    color: #80deea;
-    text-align: center;
+h2{
+    text-align:center;
+    font-size:38px;
+    color:#80deea;
+    margin-top:30px;
 }
 
-p {
-    font-size: 24px;
-    line-height: 1.8;
+p{
+    font-size:26px;
+    line-height:1.9;
+    text-align:center;
 }
 
-.highlight {
-    color: #ffeb3b;
-    font-weight: bold;
+strong{
+    color:#ffeb3b;
 }
 
-/* ===== BOTÕES ANIMADOS ===== */
-.buttons {
-    text-align: center;
-    margin-top: 40px;
+/* BOTÕES */
+.buttons{
+    text-align:center;
+    margin-top:50px;
 }
 
-.magic-btn {
-    position: relative;
-    padding: 20px 38px;
-    font-size: 26px;
-    border: none;
-    border-radius: 22px;
-    margin: 18px;
-    cursor: pointer;
-    overflow: hidden;
-    font-weight: bold;
+.magic-btn{
+    position:relative;
+    padding:28px 60px;
+    font-size:32px;
+    border:none;
+    border-radius:26px;
+    margin:25px;
+    cursor:pointer;
+    font-weight:bold;
+    overflow:hidden;
 }
 
-.magic-btn span {
-    position: relative;
-    z-index: 2;
+.magic-btn span{
+    position:relative;
+    z-index:2;
 }
 
-/* brilho passando */
-.magic-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.6),
-        transparent
-    );
-    animation: shine 3s infinite;
+/* brilho */
+.magic-btn::before{
+    content:"";
+    position:absolute;
+    left:-100%;
+    top:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+    animation:shine 3s infinite;
 }
 
-@keyframes shine {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
+@keyframes shine{
+    0%{left:-100%;}
+    50%{left:100%;}
+    100%{left:100%;}
 }
 
-/* estrelinhas */
-.magic-btn::after {
-    content: "✨ ✨ ✨";
-    position: absolute;
-    font-size: 18px;
-    opacity: 0.8;
-    animation: stars 2.5s infinite ease-in-out;
+/* estrelas */
+.magic-btn::after{
+    content:"✨ ✨ ✨";
+    position:absolute;
+    font-size:22px;
+    animation:stars 3s infinite;
 }
 
-@keyframes stars {
-    0% {
-        top: 70%;
-        left: 10%;
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        top: -10%;
-        left: 80%;
-        opacity: 0;
-    }
+@keyframes stars{
+    0%{top:80%;left:10%;opacity:0;}
+    50%{opacity:1;}
+    100%{top:-20%;left:80%;opacity:0;}
 }
 
-/* cores dos níveis */
-.n1 { background: #00e676; color: #000; }
-.n2 { background: #ff9100; color: #000; }
-.n3 { background: #ff5252; color: #fff; }
+.n1{background:#00e676;color:#000;}
+.n2{background:#ff9100;color:#000;}
+.n3{background:#ff5252;color:#fff;}
 
-/* ===== PIX ===== */
-.pixBox {
-    display: none;
-    background: rgba(0,0,0,0.6);
-    padding: 35px;
-    border-radius: 22px;
-    margin-top: 40px;
-    text-align: center;
+/* PIX */
+.pixBox{
+    display:none;
+    background:rgba(0,0,0,0.6);
+    padding:45px;
+    border-radius:25px;
+    margin-top:50px;
+    text-align:center;
 }
 
-.pixTitle {
-    font-size: 32px;
-    color: #ffeb3b;
+.pixTitle{
+    font-size:36px;
+    color:#ffeb3b;
 }
 
-.pixValue {
-    font-size: 28px;
-    margin-top: 15px;
+.pixValue{
+    font-size:32px;
+    margin-top:20px;
 }
 
-.pixKey {
-    font-size: 26px;
-    margin-top: 25px;
-    background: rgba(255,255,255,0.15);
-    padding: 15px;
-    border-radius: 12px;
+.pixKey{
+    font-size:28px;
+    margin-top:30px;
+    background:rgba(255,255,255,.15);
+    padding:20px;
+    border-radius:15px;
 }
 
-.instagram {
-    margin-top: 25px;
-    font-size: 20px;
-    color: #80deea;
+.instagram{
+    font-size:22px;
+    margin-top:25px;
+    color:#80deea;
 }
 </style>
 </head>
@@ -165,33 +147,51 @@ p {
 
 <div class="container">
 
-<div class="card">
-<h1>🧩 Avaliação do Transtorno do Espectro Autista (TEA)</h1>
+<div class="section">
+<h1>🧩 Avaliação Informativa sobre o TEA</h1>
 
 <p>
-Escolha abaixo o <span class="highlight">nível de avaliação</span>.
-Cada nível possui conteúdo explicativo e questionário próprio.
+O <strong>Transtorno do Espectro Autista (TEA)</strong> é uma condição do
+neurodesenvolvimento que pode afetar a comunicação, o comportamento,
+a interação social e a forma como a pessoa percebe o mundo.
 </p>
 
 <p>
-⚠️ Esta avaliação é <span class="highlight">informativa</span> e não substitui diagnóstico médico.
+Cada pessoa no espectro é <strong>única</strong>, apresentando características
+e níveis de suporte diferentes.
+</p>
+
+<p>
+Esta plataforma foi criada para oferecer uma
+<strong>avaliação informativa e educativa</strong>, ajudando você a compreender
+melhor os níveis do TEA.
+</p>
+
+<p>
+⚠️ <strong>Importante:</strong> Esta avaliação <strong>não substitui</strong>
+um diagnóstico médico ou psicológico.
 </p>
 </div>
 
-<div class="card">
-<h2>Escolha o nível</h2>
+<div class="section">
+<h2>Selecione o nível de avaliação</h2>
+
+<p>
+Cada nível contém explicações detalhadas e um questionário específico,
+com resultado final em <strong>porcentagem de probabilidade</strong>.
+</p>
 
 <div class="buttons">
-<button class="magic-btn n1" onclick="showPix('Nível 1', 'R$ 5,00')">
-<span>✨ Nível 1 – R$ 5 ✨</span>
+<button class="magic-btn n1" onclick="showPix('Nível 1','R$ 5,00')">
+<span>✨ NÍVEL 1 – R$ 5 ✨</span>
 </button>
 
-<button class="magic-btn n2" onclick="showPix('Nível 2', 'R$ 7,00')">
-<span>✨ Nível 2 – R$ 7 ✨</span>
+<button class="magic-btn n2" onclick="showPix('Nível 2','R$ 7,00')">
+<span>✨ NÍVEL 2 – R$ 7 ✨</span>
 </button>
 
-<button class="magic-btn n3" onclick="showPix('Nível 3', 'R$ 10,00')">
-<span>✨ Nível 3 – R$ 10 ✨</span>
+<button class="magic-btn n3" onclick="showPix('Nível 3','R$ 10,00')">
+<span>✨ NÍVEL 3 – R$ 10 ✨</span>
 </button>
 </div>
 
@@ -199,18 +199,17 @@ Cada nível possui conteúdo explicativo e questionário próprio.
 <div class="pixTitle" id="pixTitle"></div>
 
 <div class="pixValue">
-💰 Valor: <span class="highlight" id="pixValue"></span>
+💰 Valor selecionado: <strong id="pixValue"></strong>
 </div>
 
 <div class="pixKey">
-<strong>🔑 CHAVE PIX PARA PAGAMENTO</strong><br><br>
+🔑 <strong>CHAVE PIX PARA PAGAMENTO</strong><br><br>
 tellesjuan260@gmail.com
 </div>
 
 <div class="instagram">
 📸 Envie o comprovante para:<br>
-<strong>@_.juanzz009</strong><br><br>
-Após confirmação, você receberá o link de acesso.
+<strong>@_.juanzz009</strong>
 </div>
 </div>
 
@@ -219,12 +218,14 @@ Após confirmação, você receberá o link de acesso.
 </div>
 
 <script>
-function showPix(level, price) {
-    document.getElementById("pixTitle").innerHTML = "Pagamento – " + level;
-    document.getElementById("pixValue").innerHTML = price;
-    document.getElementById("pixBox").style.display = "block";
+function showPix(level,price){
+    document.getElementById("pixTitle").innerText="Pagamento – "+level;
+    document.getElementById("pixValue").innerText=price;
+    document.getElementById("pixBox").style.display="block";
 }
 </script>
 
 </body>
 </html>
+
+
