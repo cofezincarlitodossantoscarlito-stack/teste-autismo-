@@ -6,8 +6,8 @@
 
 <style>
 body {
-  font-family: 'Arial', sans-serif;
-  background: #f0f8ff;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #d9f0ff, #f0f8ff);
   margin: 0;
   padding: 0;
   line-height: 1.8;
@@ -16,26 +16,25 @@ body {
 
 .container {
   max-width: 950px;
-  margin: auto;
+  margin: 40px auto;
   padding: 40px;
   background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-h1, h2 {
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   text-align: center;
-  color: #1e3d7b;
 }
 
 h1 {
-  font-size: 38px;
-  margin-bottom: 10px;
+  font-size: 42px;
+  color: #1e3d7b;
+  margin-bottom: 15px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 32px;
+  color: #1e3d7b;
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .section {
@@ -43,23 +42,26 @@ h2 {
   padding: 25px;
   border-left: 8px solid #4aa3df;
   background: #e6f2fb;
-  border-radius: 8px;
+  border-radius: 10px;
+  text-align: left;
 }
 
 .section p {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 15px;
 }
 
 .highlight {
   font-weight: bold;
+  font-style: italic;
   color: #1e6fa8;
-  font-size: 19px;
+  font-size: 21px;
 }
 
 .prices {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
   margin-top: 30px;
   flex-wrap: wrap;
 }
@@ -68,10 +70,9 @@ h2 {
   background: #d9f0ff;
   padding: 25px;
   width: 280px;
-  margin: 10px;
-  border-radius: 12px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.2s;
 }
 
@@ -81,11 +82,11 @@ h2 {
 
 .price-box h3 {
   color: #1e6fa8;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .price-box p {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   margin: 10px 0;
 }
@@ -94,8 +95,8 @@ button {
   background: #1e6fa8;
   color: white;
   border: none;
-  padding: 14px 24px;
-  border-radius: 8px;
+  padding: 16px 24px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
 }
@@ -107,26 +108,27 @@ button:hover {
 #pixBox {
   display: none;
   margin-top: 40px;
-  padding: 30px;
+  padding: 35px;
   background: #f2f2f2;
-  border-radius: 12px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 #pixBox p {
   margin: 12px 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .pix-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
+  font-style: italic;
   color: #1e3d7b;
 }
 
 .pix-email {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   color: #0f8c3f;
 }
@@ -135,7 +137,7 @@ button:hover {
   text-align: center;
   margin-top: 50px;
   color: #555;
-  font-size: 16px;
+  font-size: 18px;
 }
 </style>
 </head>
@@ -239,5 +241,3 @@ function abrirPix(nivel, valor) {
 
 </body>
 </html>
-
-
